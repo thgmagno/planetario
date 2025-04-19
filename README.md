@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Planetário - Explorador Espacial
 
-## Getting Started
+**Planetário** é uma aplicação interativa que permite explorar dados e imagens espaciais diretamente da API pública da NASA. O projeto vai além de uma simples galeria, oferecendo uma experiência rica, informativa e visualmente imersiva sobre o universo.
 
-First, run the development server:
+🌍 **Acesse o projeto:** [planetario](https://planetario.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Funcionalidades
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Página de Exploração:** Visualização de imagens do espaço capturadas por sondas e rovers da NASA.
+- **Página Sobre:** Explica o propósito do projeto, o uso da API e como os dados são organizados.
+- **Design responsivo e imersivo:** Interface moderna com background animado de estrelas e layout adaptado para todos os dispositivos.
+- **Consumo de múltiplos endpoints:** Utiliza diferentes recursos da NASA API para fornecer conteúdo atualizado e variado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Endpoints Utilizados (NASA API)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 📷 Astronomy & Imagens
 
-## Learn More
+- **APOD - Astronomy Picture of the Day**  
+  `GET https://api.nasa.gov/planetary/apod`  
+  Retorna a imagem astronômica do dia com título, explicação e créditos.
 
-To learn more about Next.js, take a look at the following resources:
+- **Mars Rover Photos**  
+  `GET https://api.nasa.gov/mars-photos/api/v1/rovers/:rover/photos`  
+  Imagens capturadas pelos rovers Curiosity, Opportunity e Spirit.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **EPIC - Earth Polychromatic Imaging Camera**  
+  `GET https://api.nasa.gov/EPIC/api/natural`  
+  Imagens da Terra em alta resolução tiradas pelo satélite DSCOVR.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### 🌌 Dados Astronômicos & Missões
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **DONKI - Space Weather Database Of Notifications, Knowledge, Information**  
+  `GET https://api.nasa.gov/DONKI/`  
+  Dados sobre eventos solares como CMEs, flares, tempestades geomagnéticas etc.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **NeoWs - Near Earth Object Web Service**  
+  `GET https://api.nasa.gov/neo/rest/v1/feed`  
+  Objetos próximos da Terra (asteroides), com órbitas, diâmetro e aproximação.
+
+- **TechTransfer - Patentes e tecnologias espaciais**  
+  `GET https://api.nasa.gov/techtransfer/patent/`  
+  Lista de tecnologias e patentes públicas desenvolvidas pela NASA.
+
+- **Exoplanet Archive**  
+  `GET https://exoplanetarchive.ipac.caltech.edu/TAP/sync`  
+  (Não requer `api_key`) Banco de dados de planetas fora do sistema solar.
+
+---
+
+### 🌍 Dados da Terra
+
+- **Earth Assets**  
+  `GET https://api.nasa.gov/planetary/earth/assets`  
+  Retorna imagens de satélite para uma localização e data específicas.
+
+- **Earth Imagery**  
+  `GET https://api.nasa.gov/planetary/earth/imagery`  
+  Imagens do Landsat 8 com base em coordenadas e datas específicas.
+
+---
+
+O **Planetário** foi criado com foco na acessibilidade do conhecimento científico, tornando dados astronômicos disponíveis de forma simples e envolvente para qualquer pessoa. Além de servir como vitrine para uso de tecnologias modernas, o projeto reforça o potencial de APIs públicas em aplicações reais.
+
+> ℹ️ Todo o conteúdo do projeto está atualmente em **inglês**, pois os dados da API da NASA são fornecidos nesse idioma. No entanto, pretendo oferecer traduções para os dados e descrições em breve.

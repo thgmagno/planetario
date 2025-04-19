@@ -1,7 +1,14 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  images: {
+    remotePatterns: [
+      { hostname: 'apod.nasa.gov' },
+      { hostname: 'mars.jpl.nasa.gov' },
+      { hostname: 'images-assets.nasa.gov' },
+      { hostname: 'mars.nasa.gov' },
+    ],
+  },
+}
 
-export default nextConfig;
+export default nextConfig
