@@ -3,7 +3,7 @@
 import { Download } from 'lucide-react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import { cn, handleDownload } from '@/lib/utils'
 
 type Props = {
   src: string
@@ -12,14 +12,6 @@ type Props = {
 }
 
 export function MediaImage({ src, alt, className }: Props) {
-  const handleDownload = () => {
-    const link = document.createElement('a')
-    link.href = src
-    link.download = alt
-    link.target = '_blank'
-    link.click()
-  }
-
   return (
     <div
       className={cn(
@@ -36,7 +28,7 @@ export function MediaImage({ src, alt, className }: Props) {
         blurDataURL="/blur.jpg"
       />
       <Button
-        onClick={handleDownload}
+        onClick={() => handleDownload(src, alt)}
         size="icon"
         className="bg-background/70 absolute top-2 right-2 z-10 backdrop-blur"
         variant="ghost"

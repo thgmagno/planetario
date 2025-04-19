@@ -1,6 +1,7 @@
 import { getMarsPhotos } from '@/actions'
 import { Card, CardHeader, CardContent } from '@/components/ui/card'
 import { MediaImage } from '../MediaImage'
+import { MediaImageSM } from '../MediaImageSM'
 
 export default async function MarsRover() {
   const data = await getMarsPhotos()
@@ -32,6 +33,16 @@ export default async function MarsRover() {
           </p>
         </CardContent>
       </Card>
+
+      <section className="grid gap-4 md:col-span-2">
+        {data.photos.map((photo) => (
+          <MediaImageSM
+            src={photo.img_src}
+            alt={photo.rover.name}
+            key={photo.id}
+          />
+        ))}
+      </section>
     </>
   )
 }
