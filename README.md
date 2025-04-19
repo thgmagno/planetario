@@ -11,4 +11,4 @@
 
 O **Planetário** foi criado com foco na acessibilidade do conhecimento científico, tornando dados astronômicos disponíveis de forma simples e envolvente para qualquer pessoa. Além de servir como vitrine para uso de tecnologias modernas, o projeto reforça o potencial de APIs públicas em aplicações reais.
 
-> ℹ️ Todo o conteúdo do projeto está atualmente em **inglês**, pois os dados da API da NASA são fornecidos nesse idioma. No entanto, pretendo oferecer traduções para os dados e descrições em breve.
+> Todo o conteúdo do projeto está atualmente em **inglês**, pois os dados da API da NASA são fornecidos nesse idioma. No entanto, pretendo oferecer traduções para os dados e descrições em breve.

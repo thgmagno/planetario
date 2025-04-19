@@ -12,3 +12,10 @@ export const handleDownload = (src: string, alt: string) => {
   link.target = '_blank'
   link.click()
 }
+
+export const formatDate = (dateStr: string) =>
+  new Date(dateStr).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })

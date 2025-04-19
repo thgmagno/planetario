@@ -38,3 +38,32 @@ type Photo = {
 export type MarsRoverPhotoResponse = {
   photos: Photo[]
 }
+
+export interface EPICResponse {
+  identifier: string
+  caption: string
+  image: string
+  version: string
+  date: string
+  imageUrl: string
+}
+
+interface Asteroid {
+  id: string
+  name: string
+  is_potentially_hazardous_asteroid: boolean
+  estimated_diameter: Record<
+    string,
+    { estimated_diameter_min: number; estimated_diameter_max: number }
+  >
+  close_approach_data: {
+    close_approach_date: string
+    relative_velocity: Record<string, string>
+    miss_distance: Record<string, string>
+  }[]
+}
+
+export interface NeoFeedResponse {
+  element_count: number
+  near_earth_objects: Record<string, Asteroid[]>
+}

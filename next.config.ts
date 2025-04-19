@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
       { hostname: 'mars.jpl.nasa.gov' },
       { hostname: 'images-assets.nasa.gov' },
       { hostname: 'mars.nasa.gov' },
+      { hostname: 'epic.gsfc.nasa.gov' },
     ],
   },
 }

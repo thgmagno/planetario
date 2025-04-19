@@ -1,17 +1,12 @@
 import { getMarsPhotos } from '@/actions'
 import { Card, CardHeader, CardContent } from '@/components/ui/card'
 import { MediaImage } from '../MediaImage'
-import { MediaImageSM } from '../MediaImageSM'
+import { MarsRoverGrid } from './MarsRoverGrid'
+import { formatDate } from '@/lib/utils'
 
 export default async function MarsRover() {
   const data = await getMarsPhotos()
   const photo = data.photos[0]
-
-  const formatedDate = new Date(photo.earth_date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
 
   return (
     <>
@@ -22,7 +17,9 @@ export default async function MarsRover() {
           <h2>
             {photo.rover.name} - {photo.camera.full_name}
           </h2>
-          <span className="text-muted-foreground text-sm">{formatedDate}</span>
+          <span className="text-muted-foreground text-sm">
+            {formatDate(photo.earth_date)}
+          </span>
         </CardHeader>
 
         <CardContent className="space-y-4">
@@ -34,15 +31,7 @@ export default async function MarsRover() {
         </CardContent>
       </Card>
 
-      <section className="grid gap-4 md:col-span-2">
-        {data.photos.map((photo) => (
-          <MediaImageSM
-            src={photo.img_src}
-            alt={photo.rover.name}
-            key={photo.id}
-          />
-        ))}
-      </section>
+      <MarsRoverGrid data={data} />
     </>
   )
 }
