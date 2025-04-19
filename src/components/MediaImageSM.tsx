@@ -12,7 +12,7 @@ type MediaImageProps = {
 
 export function MediaImageSM({ src, alt }: MediaImageProps) {
   return (
-    <div className="group relative m-2 h-60 w-full overflow-hidden rounded-xl">
+    <div className="group relative m-2 h-30 w-full overflow-hidden rounded-xl sm:h-50 md:h-60">
       <Image
         src={src}
         alt={alt}

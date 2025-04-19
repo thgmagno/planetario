@@ -16,7 +16,7 @@ export function MarsRoverGrid({ data }: { data: MarsRoverPhotoResponse }) {
     <>
       <h2 className="mt-16">Galery of Mars Rover Photos</h2>
 
-      <section className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <section className="grid grid-cols-3 gap-4">
         {data.photos.slice(0, visiblePhotos).map((photo) => (
           <MediaImageSM
             src={photo.img_src}

@@ -15,7 +15,7 @@ export async function EPIC() {
           <h2>{title}</h2>
         </CardHeader>
 
-        <CardContent className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <CardContent className="grid grid-cols-3 gap-4">
           {data.map((dt) => (
             <MediaImageSM
               src={dt.imageUrl}
